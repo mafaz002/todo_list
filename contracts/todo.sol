@@ -18,9 +18,9 @@ contract Todo {
         idIndexLookup[count + 1] = count;
     }
 
-    function markCompleted(int _id) public {
+    function markCompleted(int _id, bool value) public {
         int index = idIndexLookup[_id];
-        todoList[uint256(index)].isCompleted = true;
+        todoList[uint256(index)].isCompleted = value;
     }
 
     function deleteTask(int _id) public {
@@ -31,6 +31,8 @@ contract Todo {
         }
 
         todoList.pop();
+
+        // TODO - update idIndexLookup with new indexes post-deletion
     }
 
     function getById(int _id) public view returns (Task memory) {

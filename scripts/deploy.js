@@ -3,6 +3,7 @@ const main = async () => {
   const contract = await contractFactory.deploy();
   console.log(`Address: ${contract.address}`);
 
+  /*
   await contract.addTask("Pilot Task");
   await contract.addTask("Good Morning");
   await contract.addTask("Good Afternoon");
@@ -20,6 +21,7 @@ const main = async () => {
     const { id, title, isCompleted } = task;
     console.log({ id, title, isCompleted });
   }
+  */
 };
 
 main();
